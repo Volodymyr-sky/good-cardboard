@@ -1,0 +1,58 @@
+/* rigth-column of main section */
+.col-536px
+    max-width: 536px
+
+.sect-main
+    position: relative
+    background: #373737 url(img/bg/bg.jpg) center no-repeat
+    height: 530px
+    color: $light-color
+    z-index: -2
+    &::before
+        content: ""
+        position: absolute
+        display: block
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background: rgba(0, 0, 0, .6)
+        z-index: -1
+    &__inner
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: 100%
+    &__circle
+        position: relative
+        &::before 
+            content: ""
+            position: absolute
+            top: 5px
+            left: 80px
+            height: 300px
+            width: 300px
+            border-radius: 50%
+            border: 1px solid #888c89
+            z-index: -1
+    &__img
+        max-width: 375px
+    &__title
+        font-family: "Roboto-Black", sans serif
+        font-size: 41px
+        font-weight: 700
+        line-height: 42px
+        margin-bottom: 10px
+    &__subtitle
+        font-family: "Roboto-Reg", sans serif
+        font-size: 28px
+        font-weight: 300
+        margin-bottom: 24px
+
+/* call to action */
+.cta
+    padding: 32px 27px
+    background: rgba(255, 255, 255, .2)
+    &__text 
+        font-family: "Roboto-Reg", sans serif
+        &--important
