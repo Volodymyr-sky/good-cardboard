@@ -7,7 +7,7 @@
     background: #373737 url(img/bg/bg.jpg) center no-repeat
     height: 530px
     color: $light-color
-    z-index: -2
+    z-index: 0
     &::before
         content: ""
         position: absolute
@@ -54,5 +54,20 @@
     padding: 32px 27px
     background: rgba(255, 255, 255, .2)
     &__text 
-        font-family: "Roboto-Reg", sans serif
-        &--important
+        font-family: "Roboto-Light", sans serif
+        font-size: 20px
+        font-weight: 300
+        line-height: 30px
+    &__text-important
+        font-family: "Roboto-Bold", sans serif
+        text-transform: uppercase
+        font-weight: 700
+        margin-bottom: 20px
+    &__text-small
+        font-family: "Roboto-Light", sans serif
+        font-size: 14px
+        font-weight: 300
+        padding: 10px 0 0 20px
+    &__form-input
+        width: 60%
+        margin-right: 10px
