@@ -43,6 +43,11 @@ function fonts() {
     .pipe(dest('dist/fonts/'))
 }
 
+function js() {
+    return src('src/js/**/*.js')
+    .pipe(dest('dist/js/'))
+}
+
 function clear() {
     return del('dist')
 }
@@ -55,10 +60,11 @@ function serve() {
     watch('src/**/*.html', series(html)).on('change', sync.reload);
     watch('src/sass/**/*.sass', series(toCss)).on('change', sync.reload);
     watch('src/img/**', series(img)).on('change', sync.reload);
-    watch('src/fonts/**').on('change', sync.reload);
+    watch('src/fonts/**', series(fonts)).on('change', sync.reload);
+    watch('src/js/**', series(js)).on('change', sync.reload);
 }
 
 
 exports.build = series(clear, toCss, html);
-exports.serve = series(clear, toCss, html, img, fonts, serve);
+exports.serve = series(clear, toCss, html, img, fonts, js, serve);
 exports.clear = clear;
