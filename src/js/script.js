@@ -1,5 +1,5 @@
 /* modal: */
-const showModalBtn = document.querySelector('.header__btn');
+const showModalBtns = document.querySelectorAll('.show-modal');
 const modal = document.querySelector('.modal');
 const hideModalBtn = document.querySelector('.modal__close');
 const body = document.querySelector('body');
@@ -15,6 +15,8 @@ function hideModal() {
     
 }
 
-showModalBtn.addEventListener('click', showModal);
+for (showModalBtn of showModalBtns) {
+    showModalBtn.addEventListener('click', showModal);
+}
 hideModalBtn.addEventListener('click', hideModal);
 /* /modal */

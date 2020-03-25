@@ -21,16 +21,23 @@
         color: $light-color
         font-size: 15px
         &:hover
-            background: #39aced
+            background: $active-color
             transition: .3s
     &--secondary
         background: transparent
         color: #aeaeae
+        border: 1px solid #9b9b9b
+        &:hover
+            color: $active-color
+            border: 1px solid $active-color
+            transition: .3s
+    &--sm
+        padding: 13px 28px
     img
         vertical-align: middle
         margin-right: 6px
 .input
-    border-radius: 3px
+    border-radius: 4px
     outline: none
     padding: 5px 10px
     font-size: 15px

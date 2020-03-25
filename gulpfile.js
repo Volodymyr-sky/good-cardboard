@@ -21,7 +21,7 @@ function html() {
 }
 
 function toCss() {
-    return src('src/sass/**.sass')
+    return src('src/sass/**/*.sass')
         .pipe(sass())
         .pipe(autoprefixer({
             // overrideBrowserslist: ['last 2 versions'], 
@@ -32,6 +32,10 @@ function toCss() {
         .pipe(dest('dist'))
 }
 
+function libs() {
+    return src('src/libs/**')
+    .pipe(dest('dist/libs'))
+}
 function img() {
     return src('src/img/**')
     .pipe(image())
@@ -62,9 +66,10 @@ function serve() {
     watch('src/img/**', series(img)).on('change', sync.reload);
     watch('src/fonts/**', series(fonts)).on('change', sync.reload);
     watch('src/js/**', series(js)).on('change', sync.reload);
+    watch('src/libs/**', series(libs)).on('change', sync.reload);
 }
 
 
 exports.build = series(clear, toCss, html);
-exports.serve = series(clear, toCss, html, img, fonts, js, serve);
+exports.serve = series(clear, toCss, html, img, fonts, js, libs, serve);
 exports.clear = clear;
